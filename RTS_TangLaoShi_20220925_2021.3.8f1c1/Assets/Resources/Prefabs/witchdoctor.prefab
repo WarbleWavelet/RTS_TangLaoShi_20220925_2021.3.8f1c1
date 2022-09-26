@@ -6324,6 +6324,7 @@ GameObject:
   - component: {fileID: 1729640961348000535}
   - component: {fileID: 1729640961348000528}
   - component: {fileID: 1729640961348000529}
+  - component: {fileID: 524080686}
   m_Layer: 0
   m_Name: witchdoctor
   m_TagString: Untagged
@@ -6384,6 +6385,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &524080686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729640961348000530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753528914881256582
 GameObject:
   m_ObjectHideFlags: 0
@@ -8051,7 +8064,7 @@ Animator:
   m_GameObject: {fileID: 2988732337886106427}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: af6ce6dd17ec2d644871b3e411ff89e6, type: 3}
-  m_Controller: {fileID: 9100000, guid: d79fdcb1b46b5fe43b93016fc8aade52, type: 2}
+  m_Controller: {fileID: 22100000, guid: c94de4d96d200eb4cb515456f068b1de, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Animator_grunt
+  m_Name: grunt
   m_Controller: {fileID: 9100000, guid: 180fc85b3b98fad4d99955089555e2ac, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400012, guid: 492da35b0ad145b4eb34f77dc8ba9bc2, type: 3}

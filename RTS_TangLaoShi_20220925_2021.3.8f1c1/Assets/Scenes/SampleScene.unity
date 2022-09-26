@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 97fbd7479d80b4e45bd205a55766a548, type: 2}
---- !u!1 &242583793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2041271761308539140, guid: 1e9cc50863692b34481fdfeb013d2908, type: 3}
-  m_PrefabInstance: {fileID: 2041271763085421462}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &242583797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242583793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &374301558
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,24 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c2e5a9546dbb64491d2cdfdd32f083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soliderObjLst: []
---- !u!1 &524080682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1729640961348000530, guid: 2776a4fb31385c941954b08fc9b67faa, type: 3}
-  m_PrefabInstance: {fileID: 1729640960223917955}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &524080686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524080682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  soldierObjLst: []
 --- !u!1 &530834912
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,40 +393,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &763736362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2671358546050836207, guid: 81047af6e47fa174aa2066a62b3b1f1e, type: 3}
-  m_PrefabInstance: {fileID: 5837908689516779778}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &763736366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763736362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &872868119 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2542051724966669853, guid: 154bfd112130d2344a91433876a8fef7, type: 3}
-  m_PrefabInstance: {fileID: 6005097679599725711}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &872868123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872868119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +444,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 87
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -881,21 +813,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1603588139024046477, guid: 154bfd112130d2344a91433876a8fef7, type: 3}
-      propertyPath: m_Center.y
-      value: 2.89
-      objectReference: {fileID: 0}
     - target: {fileID: 2542051724966669853, guid: 154bfd112130d2344a91433876a8fef7, type: 3}
       propertyPath: m_Name
       value: wyvernrider
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005097678305420926, guid: 154bfd112130d2344a91433876a8fef7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271726915499414127, guid: 154bfd112130d2344a91433876a8fef7, type: 3}
-      propertyPath: m_Height
-      value: 3.93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154bfd112130d2344a91433876a8fef7, type: 3}

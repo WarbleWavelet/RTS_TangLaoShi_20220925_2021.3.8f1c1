@@ -30,7 +30,11 @@ public class SoldierObj : MonoBehaviour
         animator = this.GetComponentInChildren<Animator>();
         agent = this.GetComponent<NavMeshAgent>();
         footEffect = this.transform.Find("FootEffect").gameObject;
-
+        
+        agent.stoppingDistance = 0.1f;
+        agent.speed = 8;
+        agent.angularSpeed = 250;
+        agent.acceleration = 100;
         SetSelSelf(false);
     }
 

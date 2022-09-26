@@ -66,4 +66,14 @@ public class Common
 	{
 		return Physics.OverlapBox(center,half);
 	}
+
+	/// <summary>
+	/// 根据面朝向 得到右朝向 旋转y轴 90度
+	/// </summary>
+	/// <param name="forward"></param>
+	/// <returns></returns>
+	public static Vector3 Vector3_Forward2Right(Vector3 forward)
+	{
+		return Quaternion.Euler(0, 90, 0) * forward;
+	}
 }
