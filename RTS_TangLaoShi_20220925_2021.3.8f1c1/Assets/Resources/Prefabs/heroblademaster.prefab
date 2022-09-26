@@ -2978,6 +2978,7 @@ GameObject:
   - component: {fileID: 3815641571800329471}
   - component: {fileID: 3815641571800329470}
   - component: {fileID: 3815641571800329457}
+  - component: {fileID: 1849365386}
   m_Layer: 0
   m_Name: heroblademaster
   m_TagString: Untagged
@@ -3038,6 +3039,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1849365386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815641571800329468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c4bd5faab2cab40b1574d43e1b4423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3815641571804271190
 GameObject:
   m_ObjectHideFlags: 0
