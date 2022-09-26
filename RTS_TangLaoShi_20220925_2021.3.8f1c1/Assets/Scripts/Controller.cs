@@ -36,6 +36,7 @@ public class Controller : MonoBehaviour
     Vector3 lastMouseClick=new Vector3();
     float unitOffset = 5; //单位间隔
     private int maxSoliders=12;
+    private float turnAngle=60;//转向超过60，重新排队
     #region 生命
 
 
@@ -74,7 +75,7 @@ public class Controller : MonoBehaviour
             }
 
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0)  )
         {
             isMouseDown = false;
             line.positionCount = 0;    //将线段的点设置为0个 就不会去绘制
@@ -99,21 +100,8 @@ public class Controller : MonoBehaviour
 
                 }
 
-                soldierObjLst.Sort((a, b) => { //越小排前面
-                    if (a.soldierType < b.soldierType)
-                    {
-                        return -1;
-                    }
-                    else if (a.soldierType == b.soldierType)
-                    {
-                        return 0;
-                    }
-                    else
-                    {
-                        return 1;
-                    }
-                
-                });
+
+                Regroup_SoldierType();
             }
         }
 
@@ -137,7 +125,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-
+ 
 
     private void ResetSoliderObjLst()
     {
@@ -163,8 +151,10 @@ public class Controller : MonoBehaviour
             
             if ( Common.RaycastHit(Input.mousePosition, out hit, hitDepth, Layer.Ground) )//获取目标点 通过射线检测
             {
-                List<Vector3> targetsPos = GetTargetPos(hit.point);      //通过目标点 计算出 真正的 阵型目标点
+                Regroup_TrunAngle(turnAngle);
 
+
+                List<Vector3> targetsPos = GetTargetPos(hit.point);      //通过目标点 计算出 真正的 阵型目标点
                 for (int i = 0; i < soldierObjLst.Count; i++)   //命令士兵朝向各自的目标点 移动
                 { 
                     soldierObjLst[i].Move(targetsPos[i]);
@@ -311,6 +301,70 @@ public class Controller : MonoBehaviour
         return tarPosLst;
     }
 
+
+
+    /// <summary>
+    /// 根据队伍转向角度排序
+    /// </summary>
+    /// <param name="angle"></param>
+    void Regroup_TrunAngle(float angle)
+    {
+        //判断队伍新朝向和队伍老朝向之间的夹角
+        Transform firstSoldier = soldierObjLst[0].transform;
+        Vector3 oldForward = firstSoldier.forward;//老朝向：soldierObjs[0].transform.forward 我们把之前的第一个士兵的面朝向作为了 阵型老朝向
+        Vector3 newForward = (hit.point - firstSoldier.position).normalized; //新朝向：(hitInfo.point - soldierObjs[0].transform.position).normalized
+        if (Vector3.Angle(newForward, oldForward) > angle) //两个朝向之间的夹角大于60度 我们就对士兵列表重新进行排序
+        {
+            soldierObjLst.Sort((a, b) =>
+            { //越小排前面
+                if (a.soldierType < b.soldierType)
+                {
+                    return -1;
+                }
+                else if (a.soldierType == b.soldierType)//只有兵种相同时 才会以离目标点距离进行排序
+                {
+                    if (Vector3.Distance(a.transform.position, hit.point)
+                        <= Vector3.Distance(b.transform.position, hit.point))
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                }
+                else
+                {
+                    return 1;
+                }
+
+            });
+        }
+    }
+
+
+   /// <summary>
+   /// 根据士兵种类排序
+   /// </summary>
+    void Regroup_SoldierType()
+    {
+        soldierObjLst.Sort((a, b) =>
+        { //越小排前面
+            if (a.soldierType < b.soldierType)
+            {
+                return -1;
+            }
+            else if (a.soldierType == b.soldierType)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+
+        });
+    }
 
 
     #endregion  
