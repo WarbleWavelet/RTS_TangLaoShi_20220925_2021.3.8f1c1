@@ -18,7 +18,7 @@ public class SoldierObj : MonoBehaviour
     private Animator animator;      //动画的切换
     private NavMeshAgent agent;     //移动方法
     private GameObject footEffect;  //设置是否处于选中状态
-
+    public SoldierType soldierType;
 
 
     #region 生命
@@ -64,4 +64,15 @@ public class SoldierObj : MonoBehaviour
     {
         footEffect.SetActive(isSel);
     }
+}
+
+public enum SoldierType
+{
+    Hero,       //英雄
+    Warrior,    //战士
+    Archer,     //猎人
+    Magician,   //魔法师
+    Loong       //龙
+
+
 }

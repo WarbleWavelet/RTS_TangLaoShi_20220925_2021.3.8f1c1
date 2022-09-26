@@ -98,6 +98,22 @@ public class Controller : MonoBehaviour
                     }
 
                 }
+
+                soldierObjLst.Sort((a, b) => { //越小排前面
+                    if (a.soldierType < b.soldierType)
+                    {
+                        return -1;
+                    }
+                    else if (a.soldierType == b.soldierType)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                
+                });
             }
         }
 
@@ -302,3 +318,7 @@ public class Controller : MonoBehaviour
     #endregion
 
 }
+
+
+
+
